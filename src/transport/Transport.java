@@ -4,7 +4,6 @@ import mechanics.Mechanic;
 
 import java.util.ArrayList;
 import java.util.List;
-;
 
 public abstract class Transport<T> implements Competitive {
     protected final String brand;
@@ -62,5 +61,22 @@ public abstract class Transport<T> implements Competitive {
 
     public List<Mechanic> getMechanics() {
         return carMechanics;
+    }
+
+    @Override
+    public boolean equals(Object transport) {
+        if (transport == null) return false;
+        Transport tr = (Transport)transport;
+        return brand.equals(tr.brand) &&
+                model.equals(tr.model) &&
+                engineVolume == tr.engineVolume &&
+                driver.equals(tr.driver) &&
+                carMechanics.equals( tr.carMechanics);
+
+    }
+    @Override
+    public int hashCode() {
+        return brand.hashCode() + model.hashCode() + (int)engineVolume + driver.hashCode() + carMechanics.hashCode();
+        //       return  hash (brand, model, engineVolume, driver, carMechanics );
     }
 }

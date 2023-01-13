@@ -103,10 +103,10 @@ public class Main {
         Mechanic mechPetya = new Mechanic("Пётр", "Грузовая компания", "грузовик");
         Mechanic mechIvan = new Mechanic("Иван", "Универсальная компания", "все виды");
 
-        List<Mechanic> mechanicsA = new ArrayList<>(List.of(mechIvan, mechVasya, mechPetya));
+        List<Mechanic> mechanicsAL = new ArrayList<>(List.of(mechIvan, mechVasya, mechPetya));
         List<Transport> transports = new ArrayList<>(List.of(carLada, busIcarus, trucksZil));
         List<Driver> drivers = new ArrayList<>(List.of(driverBob, driverCharles, driverDen));
-        System.out.println(mechanicsA);
+        System.out.println(mechanicsAL);
 
         busIcarus.setMechanics(mechVasya);
         busIcarus.setMechanics(mechPetya); // не может обслуживать
@@ -118,8 +118,9 @@ public class Main {
         mechPetya.doMaintenance(busIcarus); // отказ
         mechVasya.doMaintenance(busIcarus);
 
+
     //  вывод в консоль домашки -Введение в коллекции. Map
-        Map<Transport,Mechanic> mechanicsM = new HashMap<>(){
+        Map<Transport,Mechanic> mechanicsHM = new HashMap<>(){
             {
                 put(busIcarus, mechIvan);
                 put(trucksGaz, mechVasya);
@@ -127,7 +128,8 @@ public class Main {
             }
         };
 
-        System.out.println( mechanicsM.keySet());
+        System.out.println( mechanicsHM.keySet());
+        System.out.println( busIcarus.equals(busIcarus) + "  " + busIcarus.equals(busLiaz));
 
     }
 }

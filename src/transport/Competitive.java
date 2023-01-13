@@ -6,4 +6,6 @@ public interface Competitive {
 
     void bestLapTime();
     void maxSpeed();
+    @Override
+    boolean equals(Object transport);
 }
