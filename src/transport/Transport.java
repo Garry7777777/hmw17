@@ -76,7 +76,11 @@ public abstract class Transport<T> implements Competitive {
     }
     @Override
     public int hashCode() {
-        return brand.hashCode() + model.hashCode() + (int)engineVolume + driver.hashCode() + carMechanics.hashCode();
-        //       return  hash (brand, model, engineVolume, driver, carMechanics );
+        return brand.hashCode() +
+               model.hashCode() +
+               ((Float)engineVolume).hashCode() +
+               driver.hashCode() +
+               carMechanics.hashCode();
+
     }
 }
